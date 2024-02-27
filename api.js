@@ -1,4 +1,4 @@
-var xgwss="wss://zhibo3.yuexiawang.com";
+var xgwss="wss://zhibo33.yuexiawang.com";
 var xgjlurl="https://a6tk111.com/gallerynew/h5/lottery/search";
 var xgsqurl="https://api.49lhapi.com/api/web/lottery/lastLotteryRecord?lotteryType=1";
 var xawss="wss://zhibo.yuexiawang.com";
