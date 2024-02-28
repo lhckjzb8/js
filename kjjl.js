@@ -109,7 +109,7 @@ $(".load-more").show();
 } 
 				for (var i = ii; i < arrLen; i++) {
           var yuefen1=datas[i].lotteryTime.split("年");
-          var yuefen=yuefen[1].replace("月","-").replace("日","");
+          var yuefen=yuefen1[1].replace("月","-").replace("日","");
 result ='<div class="lotery">';
 result +='<div class="kj">';
 result +='<div class="kj-sj kj-left">';
