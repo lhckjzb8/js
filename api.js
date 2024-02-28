@@ -8,3 +8,8 @@ laurl1="https://a6tkapi1.com/gallerynew/h5/index/lastLotteryRecord?lotteryType=2
 laurl2="https://live2.lhzzcenter.com/livedata/data_mo.json";
 laurl3="https://live.lhzzcenter.com/livedata/data_mo.json";
 lajlurl="https://a6tk111.com/gallerynew/h5/lottery/search";
+syaokjxs="yes";
+xakjkssj="21:30:30";
+xakjjssj="21:33:30";
+lakjkssj="21:33:25";
+lakjjssj="21:36:20";
