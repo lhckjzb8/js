@@ -1,5 +1,5 @@
 xgwss="wss://zhibo3.yuexiawang.com";
-xgjlurl="https://a6tk111.com/gallerynew/h5/lottery/search";
+xgjlurl="https://www.49wz888.com/site/h5/lottery/search";
 xgsqurl="https://api.49lhapi.com/api/web/lottery/lastLotteryRecord?lotteryType=1";
 xawss="wss://zhibo.yuexiawang.com";
 xajlurl="https://www.49wz888.com/site/h5/lottery/search";
