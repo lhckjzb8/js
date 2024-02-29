@@ -13,3 +13,4 @@ xakjkssj="21:30:30";
 xakjjssj="21:33:30";
 lakjkssj="21:33:25";
 lakjjssj="21:36:20";
+$(".bottom").hide();
