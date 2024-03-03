@@ -67,19 +67,7 @@ var kjjg;
 var myObj =event.data;
 var obj = JSON.parse(myObj);
 var kjobj=trim(obj.k);
-if(c=="xg"){
-var kjhm = kjobj.replace("四,九,图,库,开,奖,快","香,港,六,合,彩,开,奖").replace("九,图,库,开,奖,快","香,港,六,合,开,奖").replace("图,库,开,奖,快","香,港,彩,开,奖").replace("库,开,奖,快","港,彩,开,奖").replace("开,奖,快","港,开,奖").replace("奖,快","开,奖").replace("快","奖").replace("主,持,人,介,绍,嘉,宾","香,港,六,合,彩,开,奖").replace("持,人,介,绍,嘉,宾","香,港,六,合,开,奖").replace("人,介,绍,嘉,宾","香,港,彩,开,奖").replace("介,绍,嘉,宾","港,彩,开,奖").replace("绍,嘉,宾","港,开,奖").replace("嘉,宾","开,奖").replace("宾","奖").replace("马,上,开,始,摇,奖,啦","香,港,六,合,彩,开,奖").replace("上,开,始,摇,奖,啦","香,港,六,合,开,奖").replace("开,始,摇,奖,啦","香,港,彩,开,奖").replace("始,摇,奖,啦","港,彩,开,奖").replace("摇,奖,啦","港,开,奖").replace("奖,啦","开,奖").replace("啦","奖");
-} else if(c=="xa"){
-var kjhm= kjobj.replace("四,九,图,库,开,奖,快","新,澳,六,合,彩,开,奖").replace("九,图,库,开,奖,快","新,澳,六,合,开,奖").replace("图,库,开,奖,快","新,澳,彩,开,奖").replace("库,开,奖,快","新,澳,开,奖").replace("开,奖,快","澳,开,奖").replace("奖,快","开,奖").replace("快","奖").replace("啦","中");
-} else {
-var kjhm = kjobj.replace("四,九,图,库,开,奖,快","香,港,六,合,彩,开,奖").replace("九,图,库,开,奖,快","香,港,六,合,开,奖").replace("图,库,开,奖,快","香,港,彩,开,奖").replace("库,开,奖,快","港,彩,开,奖").replace("开,奖,快","港,开,奖").replace("奖,快","开,奖").replace("快","奖").replace("主,持,人,介,绍,嘉,宾","香,港,六,合,彩,开,奖").replace("持,人,介,绍,嘉,宾","香,港,六,合,开,奖").replace("人,介,绍,嘉,宾","香,港,彩,开,奖").replace("介,绍,嘉,宾","港,彩,开,奖").replace("绍,嘉,宾","港,开,奖").replace("嘉,宾","开,奖").replace("宾","奖").replace("马,上,开,始,摇,奖,啦","香,港,六,合,彩,开,奖").replace("上,开,始,摇,奖,啦","香,港,六,合,开,奖").replace("开,始,摇,奖,啦","香,港,彩,开,奖").replace("始,摇,奖,啦","港,彩,开,奖").replace("摇,奖,啦","港,开,奖").replace("奖,啦","开,奖").replace("啦","奖");
-}
-kjjg=kjhm.split(",");
-          if(isNaN(kjjg[1]) || isNaN(kjjg[7])){
-            $("#kj-sj").show();
-            $("#kj-hm").show();
-            $("#kj-sjts").hide();
-      }
+kjjg=kjobj.split(",");
 var aa=kjjg[0].replace("2024","");
 var bb=kjjg[8].replace("2024","");
 if(kjjg[1].length>1 && isNaN(kjjg[2]) || kjjg[2].length>1 && isNaN(kjjg[3]) || kjjg[3].length>1 && isNaN(kjjg[4]) || kjjg[4].length>1 && isNaN(kjjg[5]) || kjjg[5].length>1 && isNaN(kjjg[6]) || kjjg[6].length>1 && isNaN(kjjg[7]) || kjjg[7].length>1 && aa==bb){run();};
@@ -88,9 +76,7 @@ if(kjjg[7].length>1 && aa==bb){
             $("#kj-sj").hide();
             $("#kj-hm").hide();
             $("#kj-sjts").show();
-            if(c=="xg"){
-                jl(xgjlurl,1);
-            } else if(c=="xa"){
+            if(c=="xa"){
                 jl(xajlurl,2);
             } else {
                 jl(xgjlurl,1);
@@ -112,8 +98,24 @@ jzsj="2024-"+kjjg[9]+"-"+kjjg[10]+" 21:31:01";//设置截止时间
 countTime();
 //数据显示
 for (i = 0; i < kjjg.length; i++) {
-if(kjjg[i].length<1){kjjg[i+1]="00";};
+    if(c=="xa"){
+if(typeof kjjg[1]==="undefined" || isNaN(kjjg[1])){kjjg[1]="\u65b0";};
+if(typeof kjjg[2]==="undefined" || isNaN(kjjg[2])){kjjg[2]="\u6fb3";};
+    } else {
+if(typeof kjjg[1]==="undefined" || isNaN(kjjg[1])){kjjg[1]="\u9999";};
+if(typeof kjjg[2]==="undefined" || isNaN(kjjg[2])){kjjg[2]="\u6e2f";};
+    }
+if(typeof kjjg[3]==="undefined" || isNaN(kjjg[3])){kjjg[3]="\u516d";};
+if(typeof kjjg[4]==="undefined" || isNaN(kjjg[4])){kjjg[4]="\u5408";};
+if(typeof kjjg[5]==="undefined" || isNaN(kjjg[5])){kjjg[5]="\u5f69";};
+if(typeof kjjg[6]==="undefined" || isNaN(kjjg[6])){kjjg[6]="\u5f00";};
+if(typeof kjjg[7]==="undefined" || isNaN(kjjg[7])){kjjg[7]="\u5956";};
 kj[i].className = hm_ys(kjjg[i+1]);
+          if(isNaN(kjjg[1]) || isNaN(kjjg[7])){
+            $("#kj-sj").show();
+            $("#kj-hm").show();
+            $("#kj-sjts").hide();
+      }
 if(isNaN(kjjg[i+1])){m[i].innerHTML = "<div style='margin-top: -1px;font-size: 20px;'>"+kjjg[i+1]+"</div>";}
 else {m[i].innerHTML = kjjg[i+1];};
 w[i].innerHTML = lhc.getZodiac("2024",kjjg[i+1]);
@@ -242,8 +244,8 @@ if(typeof qq[1] === "undefined"){qq[1]="\u6fb3";};
 if(typeof qq[2] === "undefined"){qq[2]="\u516d";};
 if(typeof qq[3] === "undefined"){qq[3]="\u5408";};
 if(typeof qq[4] === "undefined"){qq[4]="\u5f69";};
-if(typeof qq[5] === "undefined"){qq[5]="开";};
-if(typeof qq[6] === "undefined"){qq[6]="奖";};
+if(typeof qq[5] === "undefined"){qq[5]="\u5f00";};
+if(typeof qq[6] === "undefined"){qq[6]="\u5956";};
 hm=qq[0]+","+qq[1]+","+qq[2]+","+qq[3]+","+qq[4]+","+qq[5]+","+qq[6];
 qishu=myObj.expect;
 } else if(Obj.t == "1000"){
@@ -264,18 +266,15 @@ if(typeof nyhm[2] === "undefined"){nyhm[2]="\u6fb3";};
 if(typeof nyhm[3] === "undefined"){nyhm[3]="\u516d";};
 if(typeof nyhm[4] === "undefined"){nyhm[4]="\u5408";};
 if(typeof nyhm[5] === "undefined"){nyhm[5]="\u5f69";};
-if(typeof nyhm[6] === "undefined"){nyhm[6]="开";};
-if(typeof nyhm[7] === "undefined"){nyhm[7]="奖";};
-var hm95=nyhm[1]+","+nyhm[2]+","+nyhm[3]+","+nyhm[4]+","+nyhm[5]+","+nyhm[6]+","+nyhm[7];
-hm=hm95.replace("九,五,开,奖,网,最,快","老,澳,六,合,彩,开,奖").replace("五,开,奖,网,最,快","老,澳,六,合,开,奖").replace("开,奖,网,最,快","老,澳,彩,开,奖").replace("奖,网,最,快","澳,彩,开,奖").replace("网,最,快","澳,开,奖").replace("最,快","开,奖").replace("快","奖");
+if(typeof nyhm[6] === "undefined"){nyhm[6]="\u5f00";};
+if(typeof nyhm[7] === "undefined"){nyhm[7]="\u5956";};
+hm=nyhm[1]+","+nyhm[2]+","+nyhm[3]+","+nyhm[4]+","+nyhm[5]+","+nyhm[6]+","+nyhm[7];
 qishu="2024"+nyhm[0];
 } else {
 myObj = Obj.data;
 // 返回名字列所有值
 sj=myObj.lotteryTime+" 21:30:00";
-var hm1 =myObj.numberList[0].number+','+myObj.numberList[1].number+','+myObj.numberList[2].number+','+myObj.numberList[3].number+','+myObj.numberList[4].number+','+myObj.numberList[5].number+','+myObj.numberList[6].number;
-var hm2=hm1.replace("澳,门,最,快,开,奖,网","老,澳,六,合,彩,开,奖").replace("门,最,快,开,奖,网","老,澳,六,合,开,奖").replace("最,快,开,奖,网","老,澳,彩,开,奖").replace("快,开,奖,网","澳,彩,开,奖").replace("开,奖,网","澳,开,奖").replace("奖,网","开,奖").replace("网","奖");
-hm=hm2.replace("澳,六,图,库,开,奖,快","老,澳,六,合,彩,开,奖").replace("六,图,库,开,奖,快","老,澳,六,合,开,奖").replace("图,库,开,奖,快","老,澳,彩,开,奖").replace("库,开,奖,快","澳,彩,开,奖").replace("开,奖,快","澳,开,奖").replace("奖,快","开,奖").replace("快","奖");
+hm =myObj.numberList[0].number+','+myObj.numberList[1].number+','+myObj.numberList[2].number+','+myObj.numberList[3].number+','+myObj.numberList[4].number+','+myObj.numberList[5].number+','+myObj.numberList[6].number;
 qishu=myObj.year+myObj.period;
 }
 
@@ -346,13 +345,13 @@ sqsj.innerHTML = "2024-"+sjjg[1]+"-"+sjjg[2]+" 星期"+week;
 
 var kjjg=hmj.split(",");
 for (i = 0; i < kjjg.length; i++) {
-if(kjjg[0].length>2 || kjjg[0].length<1){kjjg[0]="\u8001";};
-if(kjjg[1].length>2 || kjjg[1].length<1){kjjg[1]="\u6fb3";};
-if(kjjg[2].length>2 || kjjg[2].length<1){kjjg[2]="\u516d";};
-if(kjjg[3].length>2 || kjjg[3].length<1){kjjg[3]="\u5408";};
-if(kjjg[4].length>2 || kjjg[4].length<1){kjjg[4]="\u5f69";};
-if(kjjg[5].length>2 || kjjg[5].length<1){kjjg[5]="开";};
-if(kjjg[6].length>2 || kjjg[6].length<1){kjjg[6]="奖";};
+if(typeof kjjg[0] === "undefined" || isNaN(kjjg[0])){kjjg[0]="\u8001";};
+if(typeof kjjg[1] === "undefined" || isNaN(kjjg[1])){kjjg[1]="\u6fb3";};
+if(typeof kjjg[2] === "undefined" || isNaN(kjjg[2])){kjjg[2]="\u516d";};
+if(typeof kjjg[3] === "undefined" || isNaN(kjjg[3])){kjjg[3]="\u5408";};
+if(typeof kjjg[4] === "undefined" || isNaN(kjjg[4])){kjjg[4]="\u5f69";};
+if(typeof kjjg[5] === "undefined" || isNaN(kjjg[5])){kjjg[5]="\u5f00";};
+if(typeof kjjg[6] === "undefined" || isNaN(kjjg[6])){kjjg[6]="\u5956";};
 kj[i].className = hm_ys(kjjg[i]);
       if(isNaN(kjjg[0]) || isNaN(kjjg[6])){
             $("#kj-sj").show();
@@ -514,10 +513,10 @@ function countTime() {
          //fen.innerHTML = m;
          //miao.innerHTML = s;
        } else {
-         $(".kj-djs").html('<span style="padding:2px 8px;background-color: #fc6162;border-radius: 5px;font-size: 16px;font-weight: 600;color: #fff;border: 1px solid rgba(0,0,0,0.1);letter-spacing: 1px;"><img src="https://lhckjzb8.github.io/js/kjfc.gif" style="width:18px; height:18px;vertical-align: middle;margin-right:5px;">正在同步开奖</span>')
+         $(".kj-djs").html('<span style="padding:2px 8px;background-color: #fc6162;border-radius: 5px;font-size: 16px;font-weight: 600;color: #fff;border: 1px solid rgba(0,0,0,0.1);letter-spacing: 1px;"><img src="/js/kjfc.gif" style="width:18px; height:18px;vertical-align: middle;margin-right:5px;">\u6b63\u5728\u540c\u6b65\u5f00\u5956</span>')
          //tian.innerHTML = "•";
-         //shi.innerHTML = "开";
-         //fen.innerHTML = "奖";
+         //shi.innerHTML = "\u5f00";
+         //fen.innerHTML = "\u5956";
          //miao.innerHTML = "中";
         }
 setTimeout(countTime, 1000);
