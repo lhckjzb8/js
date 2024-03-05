@@ -1,363 +1,392 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PWA Chapter05 Demo</title>
-  <link rel="manifest" href="https://lhckjzb8.github.io/js/manifest.json">
-  <link rel="stylesheet" href="./style/fonts/iconfont.css">
-  <link rel="stylesheet" href="./style/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="theme-color" content="#5eace0"/>
+
+    <!-- 针对safari（iOS）的添加到桌面功能进行相关设置 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="图书搜索">
+    <link rel="apple-touch-icon" href="img/icons/book-256.png">
+
+    <!-- IE的设置 -->
+    <meta name="application-name" content="图书搜索" />
+    <meta name="msapplication-TileColor" content="#222">
+    <meta name="msapplication-square70x70logo" content="img/icons/book-72.png" />
+    <meta name="msapplication-square150x150logo" content="img/icons/book-144.png" />
+    <meta name="msapplication-square310x310logo" content="img/icons/book-256.png" />
+
+    <title>PWA: 图书搜索</title>
 </head>
 <body>
-  <header class="header-wrapper">
-    <div class="header-inner-wrapper">
-      <div class="header-mid-name">Notification API 示例</div>
-    </div>
-  </header>
-
-  <section class="main">
-    <div class="content">
-      <p>本示例主要展示了 Notification API 在主线程中的使用方法，通过配置不同的参数来展示不同参数对通知的展现与功能上的影响。由于 Notification API 在不同的浏览器上的支持度不同，因此在部分浏览器可能不支持 Notification API，也有可能部分配置失效。</p>
-      <p>当前浏览器支持情况：<button id="notification-state"></button></p>
-  
-      <h2>title&body</h2>
-      <p>titie: 通知的标题，该选项为必须配置项</p>
-      <p>body: 通知内容</p>
-      <button id="btn-title-body" class="btn">普通标题&内容</button>
-      <button id="btn-long-title-body" class="btn">长标题&长内容</button>
-  
-      <h2>icon</h2>
-      <p>通知图标</p>
-      <button id="btn-icon" class="btn">通知图标</button>
-  
-      <h2>image</h2>
-      <p>通知图片预览</p>
-      <button id="btn-image" class="btn">通知图片</button>
-  
-      <h2>badge</h2>
-      <p>通知小图标</p>
-      <button id="btn-badge" class="btn">通知小图标</button>
-  
-      <h2>dir</h2>
-      <p>通知文字显示方向，可取值 <strong>ltr</strong> 和 <strong>rtl</strong>，默认值为 <strong>auto</strong>，浏览器会自动根据文字语言类型确定显示方向。</p>
-      <button id="btn-dir-ltr" class="btn">dir：ltr</button><button id="btn-dir-rtl" class="btn">dir：rtl</button>
-  
-      
-      <h2>vibrate</h2>
-      <p>通知振动模式</p>
-      <button id="btn-vibrate" class="btn">vibrate</button>
-  
-      <h2>tag</h2>
-      <p>通过设置通知标签，具有相同 tag 的通知会被分类到一起。</p>
-      <button id="btn-tag-error-first" class="btn">tag：错误类型</button>
-      <button id="btn-tag-warning-first" class="btn">tag：警告类型</button>
-      <button id="btn-tag-error-second" class="btn">tag：错误类型</button>
-  
-      <h2>renotify</h2>
-      <p>配合 tag 属性一起使用，当设置为 true 时，在接收到相同分类的通知的时候，后一条通知将静默覆盖前一条，不会多条平铺展示；当设置为 false 时，则所有的通知平铺展示。</p>
-      <p>点击下方不同的按钮，将会同时生成 3 条不同内容但 tag 相同的通知，可以观察 renotify 在不同取值情况下通知的展示方式。</p>
-      <button id="btn-renotify-true-first" class="btn">renotify：true&tag：错误类型</button>
-      <button id="btn-renotify-true-second" class="btn">renotify：true&tag：警告类型</button>
-      <button id="btn-renotify-true-third" class="btn">renotify：true&tag：错误类型</button>
-      <button id="btn-renotify-false-first" class="btn">renotify：false&tag：错误类型</button>
-      <button id="btn-renotify-false-second" class="btn">renotify：false&tag：警告类型</button>
-      <button id="btn-renotify-false-third" class="btn">renotify：false&tag：错误类型</button>
-  
-      <h2>data</h2>
-      <p>data 是任意与通知相关联的数据，可以通过通知实例 notification.data 进行访问。本示例传入的 data 为点击按钮创建通知的时间，点击通知之后，会将 data 的值显示在控制台中。</p>
-      <button id="btn-data" class="btn">data</button>
-  
-      <h2>actions</h2>
-      <p>通过 actions 属性可以在通知上定义不同的按钮，同时可以针对不同按钮设置不同的点击回调。本示例点击“点赞”后会在控制台输出相应的信息。</p>
-      <button id="btn-actions" class="btn">actions</button>
-  
-      <h2>requireInteraction</h2>
-      <p>是否强制要求用户交互。当 <strong>requireInteraction</strong>设置为 true 时，弹出的通知将不会主动消失，需要用户主动点击关闭。</p>
-      <button id="btn-require-interaction">requireInteraction：true</button>
-
-      <h2>事件: notificationclick</h2>
-      <p>监听 notificationclicks 事件，点击通知时打开新页面。</p>
-      <button id="btn-notificationclick"> notificationclick 事件</button>
-    </div>
-  </section>
-
-  <!-- service worker -->
-  <script>
-    // 判断浏览器是否支持 Service Worker
-    if ('serviceWorker' in navigator) {
-      // 在 load 事件触发后注册 Service Worker，确保 Service Worker 的注册不会影响首屏速度
-      window.addEventListener('load', function () {
-        // 注册 Service Worker
-        navigator.serviceWorker.register('https://lhckjzb8.github.io/js/sw.js').then(function (registration) {
-          // 注册成功
-          console.log('ServiceWorker registration successful with scope: ', registration.scope)
-        }).catch(function (err) {
-          // 注册失败 :(
-          console.warn('ServiceWorker registration failed: ', err)
-        })
-      })
-    }
-  </script>
-  <script>
+    <header>
+        <span class="logo"></span>
+        <input id="js-search-input" placeholder="关键词查询…">
+        <button id="js-search-btn">搜索</button>
+        <button id="js-notification-btn" class="notify-btn">提醒</button>
+    </header>
+    <main>
+        <div id="js-loading" class="loading"></div>
+        <div id="js-tip" class="tip"></div>
+        <ul class="list" id="js-list"></ul>
+        <a id="js-thanks" class="thanks" href="https://developers.douban.com/wiki/?title=guide">- 本Demo基于豆瓣API，感谢豆瓣开放平台 -</a>
+    </main>
+    <section class="panel">
+        <p>
+            讲解如何用Node构建可扩展因特网应用，是全面的实用指南，
+            除了详细介绍Node提供的API外，还用大量篇幅介绍了服务
+            器事件驱动开发的重要概念。内容涉及跨服务器的并发连接、
+            非阻塞I/O和事件驱动的编程、如何支持各种数据库和数据存
+            储工具、NodeAPI的使用示例等。适合对JavaScript及编程
+            有一定程度了解的读者阅读。
+        </p>
+    </section>
+    <script>
 /**
- * @file notification.js
- * @description notification 页面事件绑定
- * @author clark-t (clarktanglei@163.com)
+ * base64的相关操作，具体可以参考
+ * https://github.com/web-push-libs/web-push#using-vapid-key-for-applicationserverkey
  */
-function main () {
-  var $state = document.getElementById('notification-state')
-  if (typeof Notification === 'undefined') {
-    $state.innerText = '浏览器不支持 Notification API'
-    $state.classList.add('disabled')
-    return
-  }
-
-  if (Notification.permission === 'denied') {
-    $state.innerText = 'Notification 权限已被禁用'
-    return
-  }
-
-  if (Notification.permission === 'granted') {
-    $state.innerText = 'Notification 可用'
-    register()
-  } else {
-    Notification.requestPermission().then(function (permission) {
-      switch (permission) {
-        case 'granted':
-          $state.innerText = 'Notification 可用'
-          register()
-          break
-        case 'denied':
-          $state.innerText = 'Notification 权限已被禁用'
-          break
-        default:
-          $state.innerText = 'Notification 权限尚未授权'
-      }
-    })
-  }
-}
-
-function register () {
-  // 标题&内容
-  document.getElementById('btn-title-body').addEventListener('click', notifyTitleAndBody)
-  document.getElementById('btn-long-title-body').addEventListener('click', notifyLongTitleAndBody)
-  // 文字方向
-  document.getElementById('btn-dir-ltr').addEventListener('click', notifyDirLtr)
-  document.getElementById('btn-dir-rtl').addEventListener('click', notifyDirRtl)
-  // icon
-  document.getElementById('btn-icon').addEventListener('click', notifyIcon)
-  // badge
-  document.getElementById('btn-badge').addEventListener('click', notifyBadge)
-  // image
-  document.getElementById('btn-image').addEventListener('click', notifyImage)
-  // tags
-  document.getElementById('btn-tag-error-first').addEventListener('click', notifyTagErrorFirst)
-  document.getElementById('btn-tag-warning-first').addEventListener('click', notifyTagWarning)
-  document.getElementById('btn-tag-error-second').addEventListener('click', notifyTagErrorSecond)
-  document.getElementById('btn-vibrate').addEventListener('click', notifyVibrate)
-
-  // renotify
-  document.getElementById('btn-renotify-true-first').addEventListener('click', notifyRenotifyTrueFirst)
-  document.getElementById('btn-renotify-true-second').addEventListener('click', notifyRenotifyTrueSecond)
-  document.getElementById('btn-renotify-true-third').addEventListener('click', notifyRenotifyTrueThird)
-  document.getElementById('btn-renotify-false-first').addEventListener('click', notifyRenotifyFalseFirst)
-  document.getElementById('btn-renotify-false-second').addEventListener('click', notifyRenotifyFalseSecond)
-  document.getElementById('btn-renotify-false-third').addEventListener('click', notifyRenotifyFalseThird)
-
-  document.getElementById('btn-data').addEventListener('click', notifyData)
-  document.getElementById('btn-actions').addEventListener('click', notifyActions)
-  document.getElementById('btn-require-interaction').addEventListener('click', notifyRequireInteraction)
-
-  // 事件
-  document.getElementById('btn-notificationclick').addEventListener('click', notifyOpenWindow)
-}
-
-function displayNotification (title, options) {
-  navigator.serviceWorker.getRegistration().then(function (registration) {
-    registration.showNotification(title, options)
-  })
-}
-
-function notifyTitleAndBody () {
-  displayNotification('PWA-Book-Demo Notification 测试标题内容', {
-    body: 'Simple piece of body text.\nSecond line of body text :)'
-  })
-}
-
-function notifyLongTitleAndBody () {
-  displayNotification('PWA-Book-Demo Notification 测试长标题长内容', {
-    body: 'Simple piece of body text.\nSecond line of long long long long long long long long body text :) '
-  })
-}
-
-function notifyIcon () {
-  displayNotification('PWA-Book-Demo Notification Title', {
-    body: 'Simple piece of body text.\nSecond line of body text :)',
-    icon: 'https://gss0.baidu.com/9rkZbzqaKgQUohGko9WTAnF6hhy/assets/pwa/demo/pwa-icon.png'
-  })
-}
-
-function notifyImage () {
-  displayNotification('PWA-Book-Demo Notification Title', {
-    body: 'Simple piece of body text.\nSecond line of body text :)',
-    icon: 'https://gss0.baidu.com/9rkZbzqaKgQUohGko9WTAnF6hhy/assets/pwa/demo/pwa-icon.png',
-    image: 'https://gss0.baidu.com/9rkZbzqaKgQUohGko9WTAnF6hhy/assets/pwa/demo/pwa-image.png'
-  })
-}
-
-function notifyBadge () {
-  displayNotification('PWA-Book-Demo Notification Title', {
-    body: 'Simple piece of body text.\nSecond line of body text :)',
-    icon: 'https://gss0.baidu.com/9rkZbzqaKgQUohGko9WTAnF6hhy/assets/pwa/demo/pwa-icon.png',
-    badge: '/assets/images/badge-icon.png'
-  })
-}
-
-function notifyDirLtr () {
-  displayNotification('عنوان الاختبار...', {
-    body: 'اختبار محتوى الإخطار...',
-    dir: 'ltr'
-  })
-}
-
-function notifyDirRtl () {
-  displayNotification('عنوان الاختبار...', {
-    body: 'اختبار محتوى الإخطار...',
-    dir: 'rtl'
-  })
-}
-
-function notifyVibrate () {
-  displayNotification('PWA-Book-Demo 测试振动通知', {
-    body: '测试振动通知内容',
-    vibrate: [200, 100]
-  })
-}
-
-function notifyTagWarning () {
-  displayNotification('PWA-Book-Demo 测试 tag: warning', {
-    body: '第一条 tag: warning 通知',
-    icon: 'https://gss0.baidu.com/9rkZbzqaKgQUohGko9WTAnF6hhy/assets/pwa/demo/pwa-icon.png',
-    tag: 'warning'
-  })
-}
-
-function notifyTagErrorFirst () {
-  displayNotification('PWA-Book-Demo 测试 tag: error', {
-    body: '第一条 tag: error 通知',
-    icon: 'https://gss0.baidu.com/9rkZbzqaKgQUohGko9WTAnF6hhy/assets/pwa/demo/pwa-icon.png',
-    tag: 'error'
-  })
-}
-
-function notifyTagErrorSecond () {
-  displayNotification('PWA-Book-Demo 测试 tag: error', {
-    body: '第二条 tag: error 通知',
-    icon: 'https://gss0.baidu.com/9rkZbzqaKgQUohGko9WTAnF6hhy/assets/pwa/demo/pwa-icon.png',
-    tag: 'error'
-  })
-}
-
-function notifyRenotifyFalseFirst () {
-  displayNotification('PWA-Book-Demo 测试 renotify：false', {
-    body: '第一条 tag: error 通知',
-    tag: 'error',
-    renotify: false
-  })
-}
-function notifyRenotifyFalseSecond () {
-  displayNotification('PWA-Book-Demo 测试 renotify：false', {
-    body: '第一条 tag: warning 通知',
-    tag: 'warning',
-    renotify: false
-  })
-}
-function notifyRenotifyFalseThird () {
-  displayNotification('PWA-Book-Demo 测试 renotify：false', {
-    body: '第二条 tag: error 通知',
-    tag: 'error',
-    renotify: false
-  })
-}
-
-function notifyRenotifyTrueFirst () {
-  displayNotification('PWA-Book-Demo 测试 renotify：false', {
-    body: '第一条 tag: error 通知',
-    tag: 'error',
-    renotify: true
-  })
-}
-
-function notifyRenotifyTrueSecond () {
-  displayNotification('PWA-Book-Demo 测试 renotify：false', {
-    body: '第一条 tag: warning 通知',
-    tag: 'warning',
-    renotify: true
-  })
-}
-
-function notifyRenotifyTrueThird () {
-  displayNotification('PWA-Book-Demo 测试 renotify：false', {
-    body: '第二条 tag: error 通知',
-    tag: 'error',
-    renotify: true
-  })
-}
-
-// 测试 data, 在 sw.js 中监听点击通知
-function notifyData () {
-  displayNotification('PWA-Book-Demo 测试 data', {
-    body: '测试通知内容',
-    data: new Date(Date.now()).toString()
-  })
-}
-
-// 测试 actions, 在 sw.js 中监听 action 点击
-function notifyActions () {
-  displayNotification('PWA-Book-Demo 测试 actions', {
-    body: '点赞按钮可点击',
-    icon: 'https://gss0.baidu.com/9rkZbzqaKgQUohGko9WTAnF6hhy/assets/pwa/demo/pwa-icon.png',
-    data: {
-      time: new Date(Date.now()).toString()
-    },
-    actions: [
-      {
-        action: 'like',
-        title: '点赞',
-        icon: '/assets/images/like-icon.png'
-      }
-    ]
-  })
-}
-// 测试点击事件，点击打开新页面
-function notifyOpenWindow () {
-  displayNotification('你好', {
-    body: '我叫李雷，交个朋友吧',
-    icon: 'https://gss0.baidu.com/9rkZbzqaKgQUohGko9WTAnF6hhy/assets/pwa/demo/pwa-icon.png',
-    data: {
-      time: new Date(Date.now()).toString(),
-      url: 'https://www.baidu.com'
+window.urlBase64ToUint8Array = function (base64String) {
+    const padding = '='.repeat((4 - base64String.length % 4) % 4);
+    const base64 = (base64String + padding)
+      .replace(/\-/g, '+')
+      .replace(/_/g, '/');
+  
+    const rawData = window.atob(base64);
+    const outputArray = new Uint8Array(rawData.length);
+  
+    for (let i = 0; i < rawData.length; ++i) {
+      outputArray[i] = rawData.charCodeAt(i);
     }
-  })
+    return outputArray;
 }
-
-function notifyRequireInteraction () {
-  displayNotification('PWA-Book-Demo 测试 requireInteraction', {
-    body: '测试通知内容',
-    requireInteraction: true
-  })
-}
-
-main()
-
 </script>
-<script>
-  const title = 'PWA-Book-Demo Notification Title'
-const options = {
-    body: 'Simple piece of body text.\nSecond line of body text :)'
-}
-const notification = new Notification(title, options)
+    <script>
+(function() {
+    /**
+     * 生成书籍列表卡片（dom元素）
+     * @param {Object} book 书籍相关数据
+     */
+    function createCard(book) {
+        var li = document.createElement('li');
+        // var img = document.createElement('img');
+        var title = document.createElement('div');
+        var author = document.createElement('div');
+        var desc = document.createElement('div');
+        var publisher = document.createElement('span');
+        var price = document.createElement('span');
+        title.className = 'title';
+        author.className = 'author';
+        desc.className = 'desc';
+        // img.src = book.image;
+        title.innerText = book.title;
+        author.innerText = book.author;
+        publisher.innerText = book.publisher;
+        price.innerText = book.price;
+
+        book.publisher && desc.appendChild(publisher);
+        book.price && desc.appendChild(price);
+        // li.appendChild(img);
+        li.appendChild(title);
+        li.appendChild(author);
+        li.appendChild(desc);
+
+        return li;
+    }
+
+    /**
+     * 根据获取的数据列表，生成书籍展示列表
+     * @param {Array} list 书籍列表数据
+     */
+    function fillList(list) {
+        list.forEach(function (book) {
+            var node = createCard(book);
+            document.querySelector('#js-list').appendChild(node);
+        });
+    }
+
+    /**
+     * 控制tip展示与显示的内容
+     * @param {string | undefined} text tip的提示内容
+     */
+    function tip(text) {
+        if (text === undefined) {
+            document.querySelector('#js-tip').style = 'display: none';
+        }
+        else {
+            document.querySelector('#js-tip').innerHTML = text;
+            document.querySelector('#js-tip').style = 'display: block';
+        }
+    }
+
+    /**
+     * 控制loading动画的展示
+     * @param {boolean | undefined} isloading 是否展示loading
+     */
+    function loading(isloading) {
+        if (isloading) {
+            tip();
+            document.querySelector('#js-loading').style = 'display: block';
+        }
+        else {
+            document.querySelector('#js-loading').style = 'display: none';
+        }
+    }
+    
+    /**
+     * 根据用户输入结果
+     * 使用XMLHttpRequest查询并展示数据列表
+     */
+    function queryBook() {
+        var input = document.querySelector('#js-search-input');
+        var query = input.value;
+        var xhr = new XMLHttpRequest();
+        var url = '/book?q=' + query + '&fields=id,title,image,author,publisher,price';
+        var cacheData;
+        if (query === '') {
+            tip('请输入关键词');
+            return;
+        }
+        document.querySelector('#js-list').innerHTML = '';
+        document.querySelector('#js-thanks').style = 'display: none';
+        loading(true);
+        var remotePromise = getApiDataRemote(url);
+        getApiDataFromCache(url).then(function (data) {
+            if (data) {
+                loading(false);
+                input.blur();            
+                fillList(data.books);
+                document.querySelector('#js-thanks').style = 'display: block';
+            }
+            cacheData = data || {};
+            return remotePromise;
+        }).then(function (data) {
+            if (JSON.stringify(data) !== JSON.stringify(cacheData)) {
+                loading(false);                
+                input.blur();
+                fillList(data.books);
+                document.querySelector('#js-thanks').style = 'display: block';
+            }
+        });
+    }
+
+    /**
+     * 监听“搜索”按钮点击事件
+     */
+    document.querySelector('#js-search-btn').addEventListener('click', function () {
+        queryBook();
+    });
+
+    /**
+     * 监听“回车”事件
+     */
+    window.addEventListener('keypress', function (e) {
+        if (e.keyCode === 13) {
+            queryBook();
+        }
+    });
+
+    /**
+     * 获取该请求的缓存数据
+     * @param {string} url 请求的url
+     * @return {Promise}
+     */
+    function getApiDataFromCache(url) {
+        if ('caches' in window) {
+            return caches.match(url).then(function (cache) {
+                if (!cache) {
+                    return;
+                }
+                return cache.json();
+            });
+        }
+        else {
+            return Promise.resolve();
+        }
+    }
+
+    function getApiDataRemote(url) {
+        return new Promise(function (resolve, reject) {
+            var xhr = new XMLHttpRequest();
+            xhr.timeout = 60000;
+            xhr.onreadystatechange = function () {
+                var response = {};
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    try {
+                        response = JSON.parse(xhr.responseText);
+                    }
+                    catch (e) {
+                        response = xhr.responseText;
+                    }
+                    resolve(response);
+                }
+                else if (xhr.readyState === 4) {
+                    resolve();
+                }
+            };
+            xhr.onabort = reject;
+            xhr.onerror = reject;
+            xhr.ontimeout = reject;
+            xhr.open('GET', url, true);
+            xhr.send(null);
+        });
+    }
+
+    /* ========================================== */
+    /* service worker push 与 notification 相关部分 */
+    /* ========================================== */
+    /**
+     * 注意这里修改了前一篇文章中service worker注册部分的代码
+     * 将service worker的注册封装为一个方法，方便使用
+     * @param {string} file service worker文件路径
+     * @return {Promise}
+     */
+    function registerServiceWorker(file) {
+        return navigator.serviceWorker.register(file);
+    }
+
+    /**
+     * 用户订阅相关的push信息
+     * 会生成对应的pushSubscription数据，用于标识用户与安全验证
+     * @param {ServiceWorker Registration} registration
+     * @param {string} publicKey 公钥
+     * @return {Promise}
+     */
+    function subscribeUserToPush(registration, publicKey) {
+        var subscribeOptions = {
+            userVisibleOnly: true,
+            applicationServerKey: window.urlBase64ToUint8Array(publicKey)
+        }; 
+        return registration.pushManager.subscribe(subscribeOptions).then(function (pushSubscription) {
+            console.log('Received PushSubscription: ', JSON.stringify(pushSubscription));
+            return pushSubscription;
+        });
+    }
+
+    /**
+     * 将浏览器生成的subscription信息提交到服务端
+     * 服务端保存该信息用于向特定的客户端用户推送
+     * @param {string} body 请求体
+     * @param {string} url 提交的api路径，默认为/subscription
+     * @return {Promise}
+     */
+    function sendSubscriptionToServer(body, url) {
+        url = url || '/subscription';
+        return new Promise(function (resolve, reject) {
+            var xhr = new XMLHttpRequest();
+            xhr.timeout = 60000;
+            xhr.onreadystatechange = function () {
+                var response = {};
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    try {
+                        response = JSON.parse(xhr.responseText);
+                    }
+                    catch (e) {
+                        response = xhr.responseText;
+                    }
+                    resolve(response);
+                }
+                else if (xhr.readyState === 4) {
+                    resolve();
+                }
+            };
+            xhr.onabort = reject;
+            xhr.onerror = reject;
+            xhr.ontimeout = reject;
+            xhr.open('POST', url, true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(body);
+        });
+    }
+
+    if ('serviceWorker' in navigator) {
+        // 注册service worker
+        registerServiceWorker('/js/sw.js').then(function (registration) {
+            return askPermission();
+        }).then(function () {
+            /* ===== 添加提醒功能 ====== */
+            document.querySelector('#js-notification-btn').addEventListener('click', function () {
+                var title = 'PWA即学即用';
+                var options = {
+                    body: '邀请你一起学习',
+                    icon: '/img/icons/book-128.png',
+                    actions: [{
+                        action: 'show-book',
+                        title: '去看看'
+                    }, {
+                        action: 'contact-me',
+                        title: '联系我'
+                    }],
+                    tag: 'pwa-starter',
+                    renotify: true
+                };
+                // registration.showNotification(title, options);
+
+                // 使用Notification构造函数创建提醒框
+                // 而非registration.showNotification()方法
+                var notification = new Notification(title, options);
+                notification.addEventListener('click', function (e) {
+                    document.querySelector('.panel').classList.add('show');
+                });
+            });
+            /* ======================= */
+
+            console.log('Service Worker 注册成功');
+
+        }).catch(function (err) {
+            console.log(err);
+        });
+    }
+
+    /* ======= 消息通信 ======= */
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.addEventListener('message', function (e) {
+            var action = e.data;
+            console.log(`receive post-message from sw, action is '${e.data}'`);
+            switch (action) {
+                case 'show-book':
+                    location.href = 'https://book.douban.com/subject/20515024/';
+                    break;
+                case 'contact-me':
+                    location.href = 'mailto:someone@sample.com';
+                    break;
+                default:
+                    document.querySelector('.panel').classList.add('show');
+                    break;
+            }
+        });
+    }
+    /* ======================= */
+
+    /**
+     * 获取用户授权，将
+     */
+    function askPermission() {
+        return new Promise(function (resolve, reject) {
+            var permissionResult = Notification.requestPermission(function (result) {
+                resolve(result);
+            });
+      
+            if (permissionResult) {
+                permissionResult.then(resolve, reject);
+            }
+        }).then(function (permissionResult) {
+            if (permissionResult !== 'granted') {
+                throw new Error('We weren\'t granted permission.');
+            }
+        });
+    }
+
+    /* ========================================== */
+    /* ================== fin =================== */
+    /* ========================================== */
+})();
 </script>
 </body>
 </html>
