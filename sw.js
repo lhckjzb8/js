@@ -2,8 +2,8 @@
  * service worker 安装激活
  */
 
-let dataCacheName = 'new-data-v1'
-let cacheName = 'first-pwa-app-1'
+let dataCacheName = 'new-data-v11'
+let cacheName = 'first-pwa-app-11'
 let filesToCache = [
   '/',
   '/index.html',
