@@ -1,0 +1,645 @@
+body {
+  /* Disables pull-to-refresh but allows overscroll glow effects. */
+  overscroll-behavior-y: contain;
+}
+body {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently not supported by any browser */
+}
+body{
+margin:0;
+padding:0;
+background-color: #eff1f1;
+font-family:Arial,Helvetica,sans-serif;
+font-size: 15px;
+width: 100%;
+height:100%;
+}
+a,a:visited {
+  color: inherit; /* 继承链接所在元素的字体颜色 */
+  text-decoration: none; /* 去掉下划线等文本修饰 */
+}
+.bbb1{
+float: left;width: 100%;
+padding:15px 0;
+background-color:rgba(0,0,0,0.03);
+}
+#loading {
+position: fixed;
+  justify-content: center;
+  align-items: center;
+}
+/* 加载动画 */
+.loading-mask {
+  width: 100%;
+/*  height: 70%; */
+/*  margin-top:30%;*/
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+background-color: transparent;
+}
+.loading-box{
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.loading-box img{
+  width: 80px;
+}
+@keyframes ldio {
+   0% { transform: translate(6px,40px) scale(0); }
+  25% { transform: translate(6px,40px) scale(0); }
+  50% { transform: translate(6px,40px) scale(1); }
+  75% { transform: translate(40px,40px) scale(1); }
+ 100% { transform: translate(74px,40px) scale(1); }
+}
+@keyframes ldio-r {
+   0% { transform: translate(74px,40px) scale(1); }
+ 100% { transform: translate(74px,40px) scale(0); }
+}
+@keyframes ldio-c {
+   0% { background: #e15b64 }
+  25% { background: #abbd81 }
+  50% { background: #f8b26a }
+  75% { background: #f47e60 }
+ 100% { background: #e15b64 }
+}
+.ldio div {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transform: translate(40px,40px) scale(1);
+  background: #e15b64;
+  animation: ldio 3.7037037037037033s infinite cubic-bezier(0,0.5,0.5,1);
+}
+.ldio div:nth-child(1) {
+  background: #f47e60;
+  transform: translate(74px,40px) scale(1);
+  animation: ldio-r 0.9259259259259258s infinite cubic-bezier(0,0.5,0.5,1), ldio-c 3.7037037037037033s infinite step-start;
+}
+.ldio div:nth-child(2) {
+  animation-delay: -0.9259259259259258s;
+  background: #e15b64;
+}
+.ldio div:nth-child(3) {
+  animation-delay: -1.8518518518518516s;
+  background: #f47e60;
+}
+.ldio div:nth-child(4) {
+  animation-delay: -2.7777777777777777s;
+  background: #f8b26a;
+}
+.ldio div:nth-child(5) {
+  animation-delay: -3.7037037037037033s;
+  background: #abbd81;
+}
+.loadingio-spinner-ellipsis {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  overflow: hidden;
+  background: none;
+}
+.ldio {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(0.8);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
+}
+.ldio div { box-sizing: content-box; }
+.bjh{
+background-color:#EE7942;
+color:#fff;
+}
+.bjb{
+background-color:#fff;
+color:#000;
+}
+header{
+width: 100%;
+position: fixed;
+top:0;
+z-index:1001;
+background-color: #eff1f1;
+}
+header .top{
+float: left;
+padding:10px;
+display: inline-block;
+}
+header .topleft{
+float: left;color:#fff;
+}
+header .topright{
+float: right;
+}
+header .topright span{position:absolute;width:24px;height:33px;color:#fff;}
+header .topright span.menu{top:7px;right:12px;background-size:30px auto;-webkit-background-size:30px auto;background-position:0 -50px}
+header .menu-list{
+position:absolute;
+top:42px;
+right:9px;
+z-index:1001;
+background-color: #fff;
+background-image: linear-gradient(rgba(255,0,0,0.01), rgba(255,0,0,0.06), rgba(255,0,0,0.08));
+width: 98px;
+padding:5px 0;
+border: 1px solid rgba(0,0,0,0.03);
+border-radius: 8px;
+text-align: center;
+}
+header .menu-list .list-center{
+padding:3px 10px;
+margin:8px;
+border: 1px solid #EE7942;
+border-radius: 5px;
+text-align: center;
+}
+.index{
+float: left;
+margin-top:40px;
+width: 100%;
+//background-color: rgba(0,0,0,0.06);
+background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.01), rgba(0,0,0,0.02), rgba(0,0,0,0.03));
+}
+.indexk{
+float: left;
+width: 100%;
+padding:10px 0;
+}
+.indexkj{
+padding:0 10px;
+}
+.indexkj .mun{
+float: left;
+width: 100%;
+border-bottom: 2px solid #EE7942;
+}
+.indexkj .mun .lan{
+display: inline-block;
+margin-right:5px;
+padding: 5px 5px;
+border-radius: 8px 8px 0 0 ;
+box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.3);
+}
+.indexkj .kj{
+float: left;
+width: 100%;
+padding: 5px 0;
+border-radius: 0 0 8px 8px ;
+box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.3);
+background-color: #fff;
+margin-bottom:8px;
+display: inline-block;
+}
+.indexkj .kj-left{
+float: left;
+display: inline-block;
+}
+.indexkj .kj-right{
+float: right;
+width: 80px;
+height: 80px;
+border-radius: 50%;
+margin:8px 7px 0 0;
+}
+.indexkj .kj-sj{
+padding:5px 7px;
+}
+.indexkj .kj-sj .h{
+color:#f43;margin:0 3px;font-size: 16px;
+}
+.indexkj .kj-sj .d{
+color:#808080;margin-left:6px;
+}
+.indexkj .kj-djs{
+padding:10px;text-align: center;height:23px;
+}
+.indexkj .kj-djs .t-num {
+    padding:2px 5px;
+    background-color: #EE7942;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+border: 1px solid rgba(0,0,0,0.1);
+  }
+.indexkj .kj-djs .t-dv {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+margin:0 5px
+  }
+.indexkj .kj-djs .t-tian {
+    font-size: 15px;
+    font-weight: 600;
+    color: #EE7942;
+margin:1px;
+  }
+.indexkj .kj-hm{
+float: left;
+width: 96%;
+display: inline-block;margin:5px 8px 0 8px;
+}
+.indexkj .kj-hm h2{width: 100%;margin-top: 5px;margin-left:-3px;font-size: 20px; text-align: center;font-weight:normal;}
+.indexkj .kj-hm li{list-style-type: none;}
+.indexkj .kj-hm .sx{width: 40px;line-height: 35px;text-align: center;margin-left:-1.7px;font-size: 15px;}
+.indexkj .kj .f{
+float: left;
+border-top: 2px solid rgba(255,127,80,0.8);
+width: 100%;
+}
+.indexkj .kj .kjjl{
+float: left;
+width: 100%;
+}
+.indexkj .kj .kjjl .t{
+display: inline-block;float: left;
+    font-size: 18px;font-weight: bold;
+    color:#000;padding: 10px;
+}
+.indexkj .kj .kjjl .kjjlspan{
+float: right;margin-top:3px;padding: 10px;
+}
+.indexkj .kj .kjjl .kjjlspan span{
+margin:0 5px;
+padding:3px 8px;
+font-size: 14px;
+font-weight:normal;
+border: 1px solid #EE7942;border-radius: 8px;
+}
+.lotery-list .kjjl-left{
+float: left;
+border-top: 1px solid rgba(0,0,0,0.03);
+width: 100%;
+}
+.lotery-list .kj-hm h.wx{
+display: none;
+}
+.lotery-kj{
+border-top: 2px solid #F8F8FF;
+padding-top:6px;
+margin:0;
+width: 100%;
+display: inline-block;
+}
+.lotery-kj .lotery-kj-left{
+float: left;
+}
+.lotery-kj .lotery-kj-right{
+float: right;
+}
+.lotery-kj .lotery-kj-sj{
+padding-left:7px;line-height: 26px;font-size: 13px;
+}
+.lotery-kj .lotery-kj-sj .lotery-h{
+color:#f43;margin:0 0.5px;
+}
+.lotery-kj .lotery-kj-sj .lotery-d{
+color:#808080;margin-left:3px;
+}
+.lotery-kj .lotery-kj-hm{
+width: 70%;
+display: inline-block;
+margin:0 5px 0 5px;
+}
+.lotery-kj .lotery-kj-hm h2{width: 100%;margin-top: 3.8px;margin-left:-2.2px;font-size: 16px; text-align: center;font-weight:normal;}
+.lotery-kj .lotery-kj-hm li{list-style-type: none;}
+.lotery-kj .lotery-kj-hm .lotery-sx{width: 30px;line-height: 22px;text-align: center;margin-left:-1.5px;font-size: 13px;}
+.lotery-kj p{
+margin: 0px;
+margin-left:-3px;
+}
+.lotery-kj h.wx{
+display: none;
+}
+.load-more{
+float: left;
+width: 100%;
+text-align: center;
+padding:15px 0;
+}
+.load-more span{
+color:#EE7942;
+background-color:rgba(265,0,0,0.03);
+border: solid 1px #EE7942;
+border-radius: 5px;
+padding:5px 50px;
+font-size: 16px;
+letter-spacing: 1px;
+}
+#kjYearList{
+float: left;
+//padding:0 10px;
+width: 100%;
+background-color:#fff;
+line-height: 30px;
+text-align: center;
+margin-bottom:10px;
+display: inline-block;
+text-align: center;
+}
+#kjYearList li{
+background-color:#fff;
+font-size: 13px;
+font-family: inherit;
+color: #666;
+list-style: none;
+display: inline-block;
+padding:1px 0;
+border: solid 1px #eee;
+border-radius: 5px;
+line-height: 20px;
+margin:0 1.5px;
+width: 14.6%;
+text-align: center;
+}
+.indexkj .nr{
+float: left;
+width: 100%;
+padding-bottom: 5px;
+margin-bottom:8px;
+border-radius: 8px ;
+box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.3);
+background-color: #fff;
+}
+.indexkj .nr .gs{
+    margin:8px;
+}
+.indexkj .nr .gs .t{
+    display: inline-block;
+    font-size: 18px;font-weight: bold;
+    color:#000;
+}
+.indexkj .nr .gs .t span{
+    font-size: 14px;font-weight:normal;
+    color:#808080;margin-left:13px;
+}
+.bottom{
+display:none;
+width: 100%;
+position: fixed;
+bottom:0;
+z-index:1001;
+background-color: transparent;
+}
+.bottom .center{
+width: 100%;
+float: left;
+padding:0px 10px;
+display: inline-block;
+}
+.bottom .center .bottom-center{
+display: inline-block;
+width: 21%;
+padding:5px 10px;
+margin:6.5px;
+border: 1px solid #EE7942;
+border-radius: 5px;
+text-align: center;
+}
+
+
+/*开奖日期*/
+.holidayCalendar * {
+    margin: 0;
+    padding: 0;
+}
+.holidayCalendar {
+    font-family: "Microsoft Yahei";
+    font-size: 12px;
+    color: #DCDCDC;
+}
+.holidayCalendar a, .holidayCalendar a:hover {
+    color: #888;
+    text-decoration: none;
+}
+.holidayCalendar ul, .holidayCalendar li {
+    list-style: none;margin:3px 0;
+}
+.holidayCalendar {
+    display: none;
+    width: 322px;
+    //padding-bottom: 10px;
+    margin: 0px auto 0;
+    background-color: #fff;
+    border-radius: 6px;
+}
+.holidayCalendar-title {
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    padding: 10px 0;
+}
+.holidayCalendar-title a.title {
+    display: inline-block;
+    font-size: 16px;
+    text-indent: 10px;padding: 0 10px;
+}
+.holidayCalendar-title a.kjrq {
+    display: inline-block;
+    font-size: 18px;font-weight: bold;
+    text-indent: 0px;color:#000;
+}
+#backToday {
+    position: absolute;
+    left: 40%;
+    top: 15px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #44b549;
+    font-size: 13px;
+}
+.holidayCalendar-title .arrow {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 150px;
+}
+.holidayCalendar-title .arrow span {
+    color: #ddd;
+    font-size: 26px;
+    cursor: pointer;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+.holidayCalendar-title .arrow span:hover {
+    color: #888;
+}
+.holidayCalendar-title .arrow .arrow-disabled:hover {
+    color: #ddd;
+    cursor: no-drop;
+}
+.holidayCalendar-title .arrow-prev {
+    float: left;
+}
+.holidayCalendar-title .arrow-next {
+    float: right;
+}
+.holidayCalendar-week,
+.holidayCalendar-date {
+    overflow: hidden;
+}
+.holidayCalendar-week .item,
+.holidayCalendar-date .item {
+    float: left;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;border-radius: 50%;margin-right:20.9px;
+}
+.holidayCalendar-week {
+    padding-bottom: 6px;
+    border-bottom: 0px solid #44b549;
+    font-weight: bold;
+    font-size: 16px;color: #888;
+}
+.holidayCalendar-date {}
+.holidayCalendar-date .item {
+    cursor: pointer;
+    font-size: 14px;
+    border-bottom: 0px solid #ccc;border-radius: 50%;
+}
+.holidayCalendar-date .item:hover,
+.holidayCalendar-date .item-curMonth:hover {
+    background-color: #f0f0f0;
+}
+.holidayCalendar-date .item-curMonth {
+    color: #333;
+}
+.holidayCalendar-date .item-curDay,
+.holidayCalendar-date .item-curDay:hover {
+    color: #fff;
+    background-color: rgb(68,181,73,0.8);
+}
+.holidayCalendar-date .item-holiday {
+    color: #e02d2d;
+    position:relative;box-shadow: 0px 0px 1px 0px rgba(255,0,0,1);border-radius: 50%;
+    //background-color:#FFFAFA;
+}
+.holidayCalendar-date .item-holiday:after {
+    content: '开';
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 7px;
+    height: 7px;
+    color: #fff;
+    background: rgba(255,0,0,0.6);
+    text-align: left;
+    text-indent: 1px;
+    line-height: 7px;font-size: 5px;
+    overflow: hidden;
+}
+.holidayCalendar-date .item-holiday1 {
+    //color: #e02d2d;
+    position:relative;box-shadow: 0px 0px 1px 0px rgba(0,0,0,1);border-radius: 50%;
+    //background-color:#FFFAFA;
+}
+.holidayCalendar-date .item-holiday1:after {
+    content: '已开';
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 12px;
+    height: 7px;
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+    text-align: left;
+    text-indent: 1px;
+    line-height: 7px;font-size: 5px;
+    overflow: hidden;
+}
+.holidayCalendar-date .item-workingDay{
+    color: #e02d2d;
+    //background-color: #FFFAFA;
+    position:relative;box-shadow: 0px 0px 1px 0px rgba(255,165,0,1);border-radius: 50%;
+}
+.holidayCalendar-date .item-workingDay:after {
+    content: '金';
+    opacity: .5;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 7px;
+    height: 7px;
+    color: #fff;
+    background: #FFC300;
+    text-align: left;
+    text-indent: 1px;
+    line-height: 7px;
+    overflow: hidden;font-size: 5px;
+}
+.holidayCalendar-date .item-workingDay1{
+    //color: #e02d2d;
+    //background-color: #FFFAFA;
+    position:relative;box-shadow: 0px 0px 1px 0px rgba(0,0,0,1);border-radius: 50%;
+}
+.holidayCalendar-date .item-workingDay1:after {
+    content: '金';
+    opacity: .5;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 7px;
+    height: 7px;
+    color: #fff;
+    background: rgba(0,0,0,1);
+    text-align: left;
+    text-indent: 1px;
+    line-height: 7px;
+    overflow: hidden;font-size: 5px;
+}
+.holidayCalendar-today {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 62px;
+    height: 85px;
+    padding: 6px 3px;
+    background-color: #44b549;
+    border-radius: 5px;
+}
+.holidayCalendar-today .triangle {
+    position: absolute;
+    top: 20%;
+    left: 26px;
+    margin-top: -35px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent #44b549 transparent;
+}
+.holidayCalendar-today p {
+    color: #fff;
+    font-size: 12px;
+    line-height: 14px;
+}
