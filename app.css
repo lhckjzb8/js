@@ -15,7 +15,7 @@ margin:0;
 padding:0;
 background-color: #eff1f1;
 font-family:Arial,Helvetica,sans-serif;
-font-size: 15px;
+font-size: 4.25vw;
 width: 100%;
 height:100%;
 }
@@ -25,7 +25,7 @@ a,a:visited {
 }
 .bbb1{
 float: left;width: 100%;
-padding:15px 0;
+padding:4.25vw 0;
 background-color:rgba(0,0,0,0.03);
 }
 #loading {
@@ -139,7 +139,7 @@ background-color: #eff1f1;
 }
 header .top{
 float: left;
-padding:10px;
+padding:2.833vw;
 display: inline-block;
 }
 header .topleft{
@@ -148,31 +148,31 @@ float: left;color:#fff;
 header .topright{
 float: right;
 }
-header .topright span{position:absolute;width:24px;height:33px;color:#fff;}
-header .topright span.menu{top:7px;right:12px;background-size:30px auto;-webkit-background-size:30px auto;background-position:0 -50px}
+header .topright span{position:absolute;width:6.8vw;height:9.35vw;color:#fff;}
+header .topright span.menu{top:1.983vw;right:3.4vw;background-size:8.5vw auto;-webkit-background-size:8.5vw auto;background-position:0 -14.166vw;}
 header .menu-list{
 position:absolute;
-top:42px;
-right:9px;
+top:11.9vw;
+right:2.55vw;
 z-index:1001;
 background-color: #fff;
 background-image: linear-gradient(rgba(255,0,0,0.01), rgba(255,0,0,0.06), rgba(255,0,0,0.08));
-width: 98px;
-padding:5px 0;
+width: 27.766vw;
+padding:1.416vw 0;
 border: 1px solid rgba(0,0,0,0.03);
 border-radius: 8px;
 text-align: center;
 }
 header .menu-list .list-center{
-padding:3px 10px;
-margin:8px;
+padding:0.85vw 2.833vw;
+margin:2.266vw;
 border: 1px solid #EE7942;
 border-radius: 5px;
 text-align: center;
 }
 .index{
 float: left;
-margin-top:40px;
+margin-top:11.333vw;
 width: 100%;
 //background-color: rgba(0,0,0,0.06);
 background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.01), rgba(0,0,0,0.02), rgba(0,0,0,0.03));
@@ -180,10 +180,10 @@ background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.01), rgba(0,0,0,0.
 .indexk{
 float: left;
 width: 100%;
-padding:10px 0;
+padding:2.833vw 0;
 }
 .indexkj{
-padding:0 10px;
+padding:0 2.833vw;
 }
 .indexkj .mun{
 float: left;
@@ -192,19 +192,19 @@ border-bottom: 2px solid #EE7942;
 }
 .indexkj .mun .lan{
 display: inline-block;
-margin-right:5px;
-padding: 5px 5px;
+margin-right:1.416vw;
+padding: 1.416vw 1.416vw;
 border-radius: 8px 8px 0 0 ;
 box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.3);
 }
 .indexkj .kj{
 float: left;
 width: 100%;
-padding: 5px 0;
+padding: 1.416vw 0;
 border-radius: 0 0 8px 8px ;
 box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.3);
 background-color: #fff;
-margin-bottom:8px;
+margin-bottom:2.266vw;
 display: inline-block;
 }
 .indexkj .kj-left{
@@ -213,52 +213,52 @@ display: inline-block;
 }
 .indexkj .kj-right{
 float: right;
-width: 80px;
-height: 80px;
+width: 22.666vw;
+height: 22.666vw;
 border-radius: 50%;
-margin:8px 7px 0 0;
+margin:2.266vw 1.983vw 0 0;
 }
 .indexkj .kj-sj{
-padding:5px 7px;
+padding:1.416vw 1.983vw;
 }
 .indexkj .kj-sj .h{
-color:#f43;margin:0 3px;font-size: 16px;
+color:#f43;margin:0 0.85vw;font-size: 4.533vw;
 }
 .indexkj .kj-sj .d{
-color:#808080;margin-left:6px;
+color:#808080;margin-left:1.7vw;
 }
 .indexkj .kj-djs{
-padding:10px;text-align: center;height:23px;
+padding:2.833vw;text-align: center;height:6.516vw;
 }
 .indexkj .kj-djs .t-num {
-    padding:2px 5px;
+    padding:0.566vw 1.416vw;
     background-color: #EE7942;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 5.666vw;
     font-weight: 600;
     color: #fff;
 border: 1px solid rgba(0,0,0,0.1);
   }
 .indexkj .kj-djs .t-dv {
-    font-size: 20px;
+    font-size: 5.666vw;
     font-weight: 600;
     color: #000;
-margin:0 5px
+margin:0 1.416vw
   }
 .indexkj .kj-djs .t-tian {
-    font-size: 15px;
+    font-size: 4.25vw;
     font-weight: 600;
     color: #EE7942;
-margin:1px;
+margin:0.283vw;
   }
 .indexkj .kj-hm{
 float: left;
 width: 96%;
-display: inline-block;margin:5px 8px 0 8px;
+display: inline-block;margin:1.416vw 2.266vw 0 2.266vw;
 }
-.indexkj .kj-hm h2{width: 100%;margin-top: 5px;margin-left:-3px;font-size: 20px; text-align: center;font-weight:normal;}
+.indexkj .kj-hm h2{width: 100%;margin-top: 1.416vw;margin-left:-0.85vw;font-size: 5.666vw; text-align: center;font-weight:normal;}
 .indexkj .kj-hm li{list-style-type: none;}
-.indexkj .kj-hm .sx{width: 40px;line-height: 35px;text-align: center;margin-left:-1.7px;font-size: 15px;}
+.indexkj .kj-hm .sx{width: 11.333vw;line-height: 9.916vw;text-align: center;margin-left:-0.481vw;font-size: 4.25vw;}
 .indexkj .kj .f{
 float: left;
 border-top: 2px solid rgba(255,127,80,0.8);
@@ -270,16 +270,16 @@ width: 100%;
 }
 .indexkj .kj .kjjl .t{
 display: inline-block;float: left;
-    font-size: 18px;font-weight: bold;
-    color:#000;padding: 10px;
+    font-size: 5.1vw;font-weight: bold;
+    color:#000;padding: 2.833vw;
 }
 .indexkj .kj .kjjl .kjjlspan{
-float: right;margin-top:3px;padding: 10px;
+float: right;margin-top:0.85vw;padding: 2.833vw;
 }
 .indexkj .kj .kjjl .kjjlspan span{
-margin:0 5px;
-padding:3px 8px;
-font-size: 14px;
+margin:0 1.416vw;
+padding:0.85vw 2.266vw;
+font-size: 3.966vw;
 font-weight:normal;
 border: 1px solid #EE7942;border-radius: 8px;
 }
@@ -293,7 +293,7 @@ display: none;
 }
 .lotery-kj{
 border-top: 2px solid #F8F8FF;
-padding-top:6px;
+padding-top:1.7vw;
 margin:0;
 width: 100%;
 display: inline-block;
@@ -305,25 +305,25 @@ float: left;
 float: right;
 }
 .lotery-kj .lotery-kj-sj{
-padding-left:7px;line-height: 26px;font-size: 13px;
+padding-left:1.983vw;line-height: 7.366vw;font-size: 3.683vw;
 }
 .lotery-kj .lotery-kj-sj .lotery-h{
-color:#f43;margin:0 0.5px;
+color:#f43;margin:0 0.141vw;
 }
 .lotery-kj .lotery-kj-sj .lotery-d{
-color:#808080;margin-left:3px;
+color:#808080;margin-left:0.85vw;
 }
 .lotery-kj .lotery-kj-hm{
 width: 70%;
 display: inline-block;
-margin:0 5px 0 5px;
+margin:0 1.416vw 0 1.416vw;
 }
-.lotery-kj .lotery-kj-hm h2{width: 100%;margin-top: 3.8px;margin-left:-2.2px;font-size: 16px; text-align: center;font-weight:normal;}
+.lotery-kj .lotery-kj-hm h2{width: 100%;margin-top: 1.076vw;margin-left:-0.623vw;font-size: 4.533vw; text-align: center;font-weight:normal;}
 .lotery-kj .lotery-kj-hm li{list-style-type: none;}
-.lotery-kj .lotery-kj-hm .lotery-sx{width: 30px;line-height: 22px;text-align: center;margin-left:-1.5px;font-size: 13px;}
+.lotery-kj .lotery-kj-hm .lotery-sx{width: 8.5vw;line-height: 6.233vw;text-align: center;margin-left:-0.425vw;font-size: 3.683vw;}
 .lotery-kj p{
 margin: 0px;
-margin-left:-3px;
+margin-left:-0.85vw;
 }
 .lotery-kj h.wx{
 display: none;
@@ -332,15 +332,15 @@ display: none;
 float: left;
 width: 100%;
 text-align: center;
-padding:15px 0;
+padding:4.25vw 0;
 }
 .load-more span{
 color:#EE7942;
 background-color:rgba(265,0,0,0.03);
 border: solid 1px #EE7942;
 border-radius: 5px;
-padding:5px 50px;
-font-size: 16px;
+padding:1.416vw 14.16vw;
+font-size: 4.533vw;
 letter-spacing: 1px;
 }
 #kjYearList{
@@ -348,47 +348,47 @@ float: left;
 //padding:0 10px;
 width: 100%;
 background-color:#fff;
-line-height: 30px;
+line-height: 8.5vw;
 text-align: center;
-margin-bottom:10px;
+margin-bottom:2.833vw;
 display: inline-block;
 text-align: center;
 }
 #kjYearList li{
 background-color:#fff;
-font-size: 13px;
+font-size: 3.683vw;
 font-family: inherit;
 color: #666;
 list-style: none;
 display: inline-block;
-padding:1px 0;
+padding:0.283vw 0;
 border: solid 1px #eee;
 border-radius: 5px;
-line-height: 20px;
-margin:0 1.5px;
+line-height: 5.666vw;
+margin:0 0.425vw;
 width: 14.6%;
 text-align: center;
 }
 .indexkj .nr{
 float: left;
 width: 100%;
-padding-bottom: 5px;
-margin-bottom:8px;
+padding-bottom: 1.416vw;
+margin-bottom:2.266vw;
 border-radius: 8px ;
 box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.3);
 background-color: #fff;
 }
 .indexkj .nr .gs{
-    margin:8px;
+    margin:2.266vw;
 }
 .indexkj .nr .gs .t{
     display: inline-block;
-    font-size: 18px;font-weight: bold;
+    font-size: 5.1vw;font-weight: bold;
     color:#000;
 }
 .indexkj .nr .gs .t span{
-    font-size: 14px;font-weight:normal;
-    color:#808080;margin-left:13px;
+    font-size: 3.966vw;font-weight:normal;
+    color:#808080;margin-left:3.683vw;
 }
 .bottom{
 display:none;
@@ -401,14 +401,14 @@ background-color: transparent;
 .bottom .center{
 width: 100%;
 float: left;
-padding:0px 10px;
+padding:0px 2.833vw;
 display: inline-block;
 }
 .bottom .center .bottom-center{
 display: inline-block;
 width: 21%;
-padding:5px 10px;
-margin:6.5px;
+padding:1.416vw 2.833vw;
+margin:1.841vw;
 border: 1px solid #EE7942;
 border-radius: 5px;
 text-align: center;
@@ -422,7 +422,7 @@ text-align: center;
 }
 .holidayCalendar {
     font-family: "Microsoft Yahei";
-    font-size: 12px;
+    font-size: 3.4vw;
     color: #DCDCDC;
 }
 .holidayCalendar a, .holidayCalendar a:hover {
@@ -430,11 +430,11 @@ text-align: center;
     text-decoration: none;
 }
 .holidayCalendar ul, .holidayCalendar li {
-    list-style: none;margin:3px 0;
+    list-style: none;margin:0.85vw 0;
 }
 .holidayCalendar {
     display: none;
-    width: 322px;
+    width: 91vw;
     //padding-bottom: 10px;
     margin: 0px auto 0;
     background-color: #fff;
@@ -442,42 +442,42 @@ text-align: center;
 }
 .holidayCalendar-title {
     position: relative;
-    height: 30px;
-    line-height: 30px;
-    padding: 10px 0;
+    height: 8.5vw;
+    line-height: 8.5vw;
+    padding: 2.833vw 0;
 }
 .holidayCalendar-title a.title {
     display: inline-block;
-    font-size: 16px;
-    text-indent: 10px;padding: 0 10px;
+    font-size: 4.533vw;
+    text-indent: 2.833vw;padding: 0 2.833vw;
 }
 .holidayCalendar-title a.kjrq {
     display: inline-block;
-    font-size: 18px;font-weight: bold;
+    font-size: 5.1vw;font-weight: bold;
     text-indent: 0px;color:#000;
 }
 #backToday {
     position: absolute;
     left: 40%;
-    top: 15px;
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
+    top: 4.25vw;
+    width: 5.666vw;
+    height: 5.666vw;
+    line-height: 5.666vw;
     text-align: center;
     border-radius: 50%;
     color: #fff;
     background-color: #44b549;
-    font-size: 13px;
+    font-size: 3.683vw;
 }
 .holidayCalendar-title .arrow {
     position: absolute;
-    top: 10px;
+    top: 2.833vw;
     right: 0;
-    width: 150px;
+    width: 42.5vw;
 }
 .holidayCalendar-title .arrow span {
     color: #ddd;
-    font-size: 26px;
+    font-size: 7.366vw;
     cursor: pointer;
 
     -webkit-user-select: none;
@@ -506,21 +506,21 @@ text-align: center;
 .holidayCalendar-week .item,
 .holidayCalendar-date .item {
     float: left;
-    width: 28px;
-    height: 28px;
-    line-height: 28px;
-    text-align: center;border-radius: 50%;margin-right:20.9px;
+    width: 7.933vw;
+    height: 7.933vw;
+    line-height: 7.933vw;
+    text-align: center;border-radius: 50%;margin-left:2.28vw;margin-right:2.68vw;
 }
 .holidayCalendar-week {
-    padding-bottom: 6px;
+    padding-bottom: 1.7vw;
     border-bottom: 0px solid #44b549;
     font-weight: bold;
-    font-size: 16px;color: #888;
+    font-size: 4.533vw;color: #888;
 }
 .holidayCalendar-date {}
 .holidayCalendar-date .item {
     cursor: pointer;
-    font-size: 14px;
+    font-size: 3.966vw;
     border-bottom: 0px solid #ccc;border-radius: 50%;
 }
 .holidayCalendar-date .item:hover,
@@ -546,13 +546,13 @@ text-align: center;
     left: 0;
     top: 0;
     display: block;
-    width: 7px;
-    height: 7px;
+    width: 1.983vw;
+    height: 1.983vw;
     color: #fff;
     background: rgba(255,0,0,0.6);
     text-align: left;
     text-indent: 1px;
-    line-height: 7px;font-size: 5px;
+    line-height: 1.983vw;font-size: 5px;
     overflow: hidden;
 }
 .holidayCalendar-date .item-holiday1 {
@@ -566,13 +566,13 @@ text-align: center;
     left: 0;
     top: 0;
     display: block;
-    width: 12px;
-    height: 7px;
+    width: 3.4vw;
+    height: 1.983vw;
     color: #fff;
     background: rgba(0,0,0,0.5);
     text-align: left;
     text-indent: 1px;
-    line-height: 7px;font-size: 5px;
+    line-height: 1.983vw;font-size: 5px;
     overflow: hidden;
 }
 .holidayCalendar-date .item-workingDay{
@@ -587,13 +587,13 @@ text-align: center;
     left: 0;
     top: 0;
     display: block;
-    width: 7px;
-    height: 7px;
+    width: 1.983vw;
+    height: 1.983vw;
     color: #fff;
     background: #FFC300;
     text-align: left;
     text-indent: 1px;
-    line-height: 7px;
+    line-height: 1.983vw;
     overflow: hidden;font-size: 5px;
 }
 .holidayCalendar-date .item-workingDay1{
@@ -608,13 +608,13 @@ text-align: center;
     left: 0;
     top: 0;
     display: block;
-    width: 7px;
-    height: 7px;
+    width: 1.983vw;
+    height: 1.983vw;
     color: #fff;
     background: rgba(0,0,0,1);
     text-align: left;
     text-indent: 1px;
-    line-height: 7px;
+    line-height: 1.983vw;
     overflow: hidden;font-size: 5px;
 }
 .holidayCalendar-today {
@@ -622,24 +622,24 @@ text-align: center;
     opacity: 0;
     position: absolute;
     left: 0;
-    top: 50px;
-    width: 62px;
-    height: 85px;
-    padding: 6px 3px;
+    top: 14.16vw;
+    width: 17.566vw;
+    height: 29.083vw;
+    padding: 1.7vw 0.85vw;
     background-color: #44b549;
     border-radius: 5px;
 }
 .holidayCalendar-today .triangle {
     position: absolute;
     top: 20%;
-    left: 26px;
-    margin-top: -35px;
-    border-width: 8px;
+    left: 7.366vw;
+    margin-top: -9.916vw;
+    border-width: 2.266vw;
     border-style: solid;
     border-color: transparent transparent #44b549 transparent;
 }
 .holidayCalendar-today p {
     color: #fff;
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 3.4vw;
+    line-height: 3.966vw;
 }
